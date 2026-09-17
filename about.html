@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>About - Rota da Vida</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:400,600,700&display=swap">
+    <style>
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-color: #fdfbf7;
+            color: #4a453f;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+        .rota-header {
+            background-color: #f7f4ef;
+            border-bottom: 1px solid #e8e2d5;
+            padding: 18px 20px;
+        }
+        .rota-nav-content {
+            max-width: 1000px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .rota-logo {
+            color: #6b8271;
+            font-size: 22px;
+            font-weight: 700;
+            text-decoration: none;
+        }
+        .rota-menu { display: flex; gap: 20px; }
+        .rota-menu a {
+            color: #6c655d;
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: 600;
+        }
+        .rota-menu a:hover, .rota-menu a.active { color: #d8a47f; }
+        .rota-main {
+            flex: 1;
+            max-width: 800px;
+            width: 100%;
+            margin: 40px auto;
+            padding: 0 20px;
+        }
+        .rota-card {
+            background-color: #f7f4ef;
+            border: 1px solid #e8e2d5;
+            padding: 40px 30px;
+            border-radius: 18px;
+            box-shadow: 0 8px 24px rgba(74, 69, 63, 0.04);
+            line-height: 1.7;
+        }
+        .rota-card h1 { color: #6b8271; margin-bottom: 15px; }
+        .rota-footer {
+            background-color: #f7f4ef;
+            border-top: 1px solid #e8e2d5;
+            padding: 20px 0;
+            text-align: center;
+            font-size: 13px;
+            color: #8c8379;
+        }
+    </style>
+</head>
+<body>
+    <header class="rota-header">
+        <div class="rota-nav-content">
+            <a href="./index.html" class="rota-logo">Rota da Vida</a>
+            <nav class="rota-menu">
+                <a href="./index.html">Home</a>
+                <a href="./about.html" class="active">About</a>
+                <a href="./blog.html">Blog</a>
+                <a href="./contact.html">Contact</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="rota-main">
+        <section class="rota-card">
+            <h1>About Me</h1>
+            <p>Welcome! Here is where your story, inspirations, and travel experiences live.</p>
+        </section>
+    </main>
+
+    <footer class="rota-footer">
+        <p>© 2026 Rota da Vida. Crafted with care.</p>
+    </footer>
+</body>
+</html>
