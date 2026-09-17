@@ -1,11 +1,181 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8">
-  <title>Rota da Vida</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Rota da Vida</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:400,600,700&display=swap">
+    <style>
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body {
+            font-family: 'Roboto', -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+            background-color: #fdfbf7;
+            color: #4a453f;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+        .rota-header {
+            background-color: #f7f4ef;
+            border-bottom: 1px solid #e8e2d5;
+            padding: 18px 20px;
+        }
+        .rota-nav-content {
+            max-width: 1000px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .rota-logo {
+            color: #6b8271;
+            font-size: 22px;
+            font-weight: 700;
+            text-decoration: none;
+            letter-spacing: 0.5px;
+        }
+        .rota-menu { display: flex; gap: 20px; }
+        .rota-menu a {
+            color: #6c655d;
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: 600;
+            transition: color 0.2s;
+        }
+        .rota-menu a:hover, .rota-menu a.active { color: #d8a47f; }
+        .rota-main {
+            flex: 1;
+            max-width: 800px;
+            width: 100%;
+            margin: 40px auto;
+            padding: 0 20px;
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+        }
+        .rota-card {
+            background-color: #f7f4ef;
+            border: 1px solid #e8e2d5;
+            padding: 45px 30px;
+            border-radius: 18px;
+            text-align: center;
+            box-shadow: 0 8px 24px rgba(74, 69, 63, 0.04);
+        }
+        .rota-avatar {
+            width: 190px;
+            height: 190px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 5px solid #ffffff;
+            box-shadow: 0 10px 25px rgba(107, 130, 113, 0.25);
+            margin-bottom: 20px;
+        }
+        .rota-saudacao {
+            font-size: 14px;
+            font-weight: 600;
+            color: #8a9a8f;
+            display: block;
+            margin-bottom: 8px;
+        }
+        .rota-card h2 {
+            font-size: 26px;
+            margin-bottom: 12px;
+            color: #6b8271;
+        }
+        .rota-card p {
+            font-size: 16px;
+            line-height: 1.65;
+            color: #6c655d;
+            max-width: 620px;
+            margin: 0 auto 25px auto;
+        }
+        .rota-subtitulo {
+            font-size: 13px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: #d8a47f;
+            display: block;
+            margin-bottom: 8px;
+        }
+        .rota-btn {
+            display: inline-block;
+            padding: 12px 28px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 14px;
+            background-color: #d8a47f;
+            color: #ffffff;
+            transition: transform 0.2s, background-color 0.2s;
+        }
+        .rota-btn:hover {
+            background-color: #c4916d;
+            transform: scale(1.03);
+        }
+        .rota-footer {
+            background-color: #f7f4ef;
+            border-top: 1px solid #e8e2d5;
+            padding: 22px 0;
+            text-align: center;
+            font-size: 13px;
+            color: #8c8379;
+        }
+        @media (max-width: 768px) {
+            .rota-nav-content {
+                flex-direction: column;
+                gap: 12px;
+            }
+            .rota-menu { gap: 15px; }
+        }
+    </style>
 </head>
-<body style="font-family: sans-serif; text-align: center; padding: 50px;">
-  <h1>Rota da Vida</h1>
-  <p>O site está no ar com sucesso!</p>
+<body>
+    <header class="rota-header">
+        <div class="rota-nav-content">
+            <a href="./" class="rota-logo">Rota da Vida</a>
+            <nav class="rota-menu">
+                <a href="./" class="active">Home</a>
+                <a href="#about">About</a>
+                <a href="#blog">Blog</a>
+                <a href="#contact">Contact</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="rota-main">
+        <section class="rota-card">
+            <img src="./index_files/WhatsApp-Image-2026-09-16-at-11.50.43.jpeg" alt="Foto de Thais" class="rota-avatar" onerror="this.src='./index_html/WhatsApp-Image-2026-09-16-at-11.50.43.jpeg'">
+            <span id="saudacao-dinamica" class="rota-saudacao">Welcome to Rota da Vida</span>
+            <h2>Hi, I'm Thais</h2>
+            <p>Welcome to Rota da Vida! I’m passionate about travel, and I believe that when you truly want something, anything is possible. Here, I share a little bit about my life, financial education, and travel tips. Grab a cup of coffee and explore along with me.</p>
+            <a href="#about" class="rota-btn">More About Me</a>
+        </section>
+
+        <section class="rota-card" id="blog">
+            <span class="rota-subtitulo">Start Here</span>
+            <h2>Explore Your Journey</h2>
+            <p>Ready to plan your next destination, turn your dreams into reality, and organize your finances with calm? Take the first step into our universe of ideas and practical guides.</p>
+            <a href="#blog" class="rota-btn">Explore the Blog →</a>
+        </section>
+    </main>
+
+    <footer class="rota-footer">
+        <p>© 2026 Rota da Vida. Crafted with care & calm thoughts.</p>
+    </footer>
+
+    <script>
+        (function() {
+            const elemento = document.getElementById("saudacao-dinamica");
+            const hora = new Date().getHours();
+            if (hora >= 5 && hora < 12) {
+                elemento.innerText = "☀️ Good morning! May your day be light and inspiring.";
+            } else if (hora >= 12 && hora < 18) {
+                elemento.innerText = "🌤️ Good afternoon! Take a peaceful moment for yourself.";
+            } else {
+                elemento.innerText = "🌙 Good evening! Enjoy a quiet moment of reflection.";
+            }
+        })();
+    </script>
 </body>
 </html>
