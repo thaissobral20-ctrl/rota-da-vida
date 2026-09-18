@@ -6,17 +6,10 @@
 	<title>About - Rota da Vida</title>
 	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,600,700&display=swap">
 	<style>
-		/* Oculta seletores nativos indesejados */
 		.page-header, .page-title, h1.entry-title, .elementor-page-title, .site-title, .site-branding {
 			display: none !important;
 		}
-
-		* {
-			box-sizing: border-box;
-			margin: 0;
-			padding: 0;
-		}
-
+		* { box-sizing: border-box; margin: 0; padding: 0; }
 		body {
 			background-color: #fdfbf7;
 			font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
@@ -24,15 +17,12 @@
 			margin: 0;
 			padding: 0;
 		}
-
 		.rota-container-global {
 			width: 100%;
 			max-width: 1100px;
 			margin: 0 auto !important;
 			padding: 0 20px;
 		}
-
-		/* Cabeçalho */
 		.rota-header {
 			background-color: #f7f4ef;
 			border-bottom: 1px solid #e8e2d5;
@@ -45,7 +35,6 @@
 			margin-right: -50vw;
 			margin-bottom: 35px;
 		}
-
 		.rota-nav-content {
 			max-width: 1100px;
 			margin: 0 auto;
@@ -54,35 +43,25 @@
 			align-items: center;
 			padding: 0 20px;
 		}
-
 		.rota-header a, .rota-header a *, .rota-logo span, .rota-menu a span {
 			color: #6c655d !important;
 			text-decoration: none !important;
 		}
-
 		.rota-logo span {
 			color: #6b8271 !important;
 			font-size: 20px;
 			font-weight: 700;
 			letter-spacing: 0.5px;
 		}
-
-		.rota-menu {
-			display: flex;
-			gap: 25px;
-		}
-
+		.rota-menu { display: flex; gap: 25px; }
 		.rota-menu a span {
 			font-size: 14px;
 			font-weight: 600;
 			transition: color 0.2s ease;
 		}
-
 		.rota-menu a:hover span, .rota-menu a.active span {
 			color: #d8a47f !important;
 		}
-
-		/* Card Sobre Principal */
 		.rota-card-sobre {
 			background-color: #f7f4ef;
 			border: 1px solid #e8e2d5;
@@ -93,14 +72,12 @@
 			box-shadow: 0 8px 24px rgba(74, 69, 63, 0.04);
 			margin-bottom: 45px;
 		}
-
 		.rota-avatar-wrapper {
 			margin-bottom: 22px;
 			display: flex;
 			justify-content: center;
 			align-items: center;
 		}
-
 		.rota-avatar {
 			display: inline-block !important;
 			width: 170px !important;
@@ -115,12 +92,10 @@
 			box-shadow: 0 0 0 3px rgba(107, 130, 113, 0.25), 0 14px 28px -4px rgba(107, 130, 113, 0.35), 0 24px 38px -8px rgba(74, 69, 63, 0.16) !important;
 			transition: transform 0.3s ease, box-shadow 0.3s ease;
 		}
-
 		.rota-avatar:hover {
 			transform: scale(1.03);
 			box-shadow: 0 0 0 3px rgba(107, 130, 113, 0.35), 0 16px 32px -3px rgba(107, 130, 113, 0.42), 0 26px 40px -6px rgba(74, 69, 63, 0.2) !important;
 		}
-
 		.rota-tag-destaque {
 			font-size: 13px;
 			font-weight: 700;
@@ -130,14 +105,12 @@
 			display: block;
 			margin-bottom: 8px;
 		}
-
 		.rota-card-sobre h2 {
 			font-size: 28px;
 			margin-bottom: 16px;
 			font-weight: 700;
 			color: #6b8271;
 		}
-
 		.rota-bio-lead {
 			font-size: 17px;
 			line-height: 1.7;
@@ -145,7 +118,6 @@
 			max-width: 720px;
 			margin: 0 auto 16px auto;
 		}
-
 		.rota-bio-body {
 			font-size: 15px;
 			line-height: 1.7;
@@ -153,18 +125,12 @@
 			max-width: 720px;
 			margin: 0 auto;
 		}
-
-		/* Galeria de Viagens */
-		.rota-galeria-secao {
-			margin-bottom: 50px;
-		}
-
+		.rota-galeria-secao { margin-bottom: 50px; }
 		.rota-galeria-grid {
 			display: grid;
 			grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
 			gap: 25px;
 		}
-
 		.rota-foto-card {
 			background-color: #f7f4ef;
 			border: 1px solid #e8e2d5;
@@ -175,12 +141,10 @@
 			display: flex;
 			flex-direction: column;
 		}
-
 		.rota-foto-card:hover {
 			transform: translateY(-6px);
 			box-shadow: 0 14px 28px rgba(74, 69, 63, 0.09);
 		}
-
 		.rota-foto-img-wrap {
 			width: 100%;
 			height: 240px;
@@ -188,7 +152,6 @@
 			position: relative;
 			background-color: #eee9df;
 		}
-
 		.rota-foto-viagem {
 			width: 100% !important;
 			height: 100% !important;
@@ -196,16 +159,8 @@
 			display: block !important;
 			transition: transform 0.4s ease;
 		}
-
-		.rota-foto-card:hover .rota-foto-viagem {
-			transform: scale(1.06);
-		}
-
-		.rota-foto-info {
-			padding: 20px;
-			text-align: left;
-		}
-
+		.rota-foto-card:hover .rota-foto-viagem { transform: scale(1.06); }
+		.rota-foto-info { padding: 20px; text-align: left; }
 		.rota-foto-tag {
 			font-size: 12px;
 			font-weight: 700;
@@ -215,41 +170,21 @@
 			display: block;
 			margin-bottom: 6px;
 		}
-
 		.rota-foto-info h4 {
 			margin: 0;
 			font-size: 16px;
 			font-weight: 600;
 			color: #4a453f;
 		}
-
-		/* Pilares de Conteúdo */
-		.rota-pilares {
-			margin-bottom: 45px;
-		}
-
-		.rota-title {
-			text-align: center;
-			margin-bottom: 28px;
-		}
-
-		.rota-title h2 {
-			font-size: 24px;
-			color: #6b8271;
-			margin-bottom: 6px;
-		}
-
-		.rota-title p {
-			font-size: 15px;
-			color: #6c655d;
-		}
-
+		.rota-pilares { margin-bottom: 45px; }
+		.rota-title { text-align: center; margin-bottom: 28px; }
+		.rota-title h2 { font-size: 24px; color: #6b8271; margin-bottom: 6px; }
+		.rota-title p { font-size: 15px; color: #6c655d; }
 		.rota-pilares-grid {
 			display: grid;
 			grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
 			gap: 22px;
 		}
-
 		.rota-pilar-item {
 			background-color: #f7f4ef;
 			border: 1px solid #e8e2d5;
@@ -259,32 +194,13 @@
 			transition: transform 0.3s ease, box-shadow 0.3s ease;
 			box-shadow: 0 6px 18px rgba(74, 69, 63, 0.03);
 		}
-
 		.rota-pilar-item:hover {
 			transform: translateY(-4px);
 			box-shadow: 0 12px 25px rgba(74, 69, 63, 0.07);
 		}
-
-		.rota-pilar-icon {
-			font-size: 32px;
-			display: inline-block;
-			margin-bottom: 12px;
-		}
-
-		.rota-pilar-item h3 {
-			font-size: 18px;
-			color: #4a453f;
-			margin-bottom: 10px;
-		}
-
-		.rota-pilar-item p {
-			font-size: 14px;
-			line-height: 1.6;
-			color: #6c655d;
-			margin: 0;
-		}
-
-		/* Card CTA Final */
+		.rota-pilar-icon { font-size: 32px; display: inline-block; margin-bottom: 12px; }
+		.rota-pilar-item h3 { font-size: 18px; color: #4a453f; margin-bottom: 10px; }
+		.rota-pilar-item p { font-size: 14px; line-height: 1.6; color: #6c655d; margin: 0; }
 		.rota-card-cta {
 			background-color: #f7f4ef;
 			border: 1px solid #e8e2d5;
@@ -294,27 +210,14 @@
 			box-shadow: 0 8px 24px rgba(74, 69, 63, 0.04);
 			margin-bottom: 50px;
 		}
-
-		.rota-card-cta h2 {
-			font-size: 22px;
-			color: #6b8271;
-			margin-bottom: 8px;
-		}
-
-		.rota-card-cta p {
-			font-size: 15px;
-			color: #6c655d;
-			margin: 0 auto 22px auto;
-		}
-
-		/* Botões */
+		.rota-card-cta h2 { font-size: 22px; color: #6b8271; margin-bottom: 8px; }
+		.rota-card-cta p { font-size: 15px; color: #6c655d; margin: 0 auto 22px auto; }
 		.rota-botoes-container {
 			display: flex;
 			justify-content: center;
 			gap: 15px;
 			flex-wrap: wrap;
 		}
-
 		.rota-btn {
 			display: inline-block;
 			padding: 12px 28px;
@@ -324,28 +227,10 @@
 			font-size: 14px;
 			transition: background-color 0.2s ease, transform 0.2s ease;
 		}
-
-		.rota-btn-primario {
-			background-color: #d8a47f;
-			color: #ffffff !important;
-		}
-
-		.rota-btn-primario:hover {
-			background-color: #c4916d;
-			transform: scale(1.04);
-		}
-
-		.rota-btn-secundario {
-			background-color: #6b8271;
-			color: #ffffff !important;
-		}
-
-		.rota-btn-secundario:hover {
-			background-color: #586c5d;
-			transform: scale(1.04);
-		}
-
-		/* Rodapé */
+		.rota-btn-primario { background-color: #d8a47f; color: #ffffff !important; }
+		.rota-btn-primario:hover { background-color: #c4916d; transform: scale(1.04); }
+		.rota-btn-secundario { background-color: #6b8271; color: #ffffff !important; }
+		.rota-btn-secundario:hover { background-color: #586c5d; transform: scale(1.04); }
 		.rota-footer {
 			background-color: #f7f4ef;
 			border-top: 1px solid #e8e2d5;
@@ -358,44 +243,17 @@
 			margin-right: -50vw;
 			text-align: center;
 		}
-
-		.rota-footer p {
-			margin: 0;
-			font-size: 13px;
-			color: #8c8379;
-		}
-
-		/* Animações */
-		@keyframes rotaFadeInUp {
-			from { opacity: 0; transform: translateY(18px); }
-			to { opacity: 1; transform: translateY(0); }
-		}
-
-		.rota-animar-topo { animation: rotaFadeInUp 0.6s ease forwards; }
-		.rota-animar-card { animation: rotaFadeInUp 0.8s ease 0.15s forwards; opacity: 0; }
-		.rota-animar-galeria { animation: rotaFadeInUp 0.8s ease 0.3s forwards; opacity: 0; }
-		.rota-animar-pilares { animation: rotaFadeInUp 0.8s ease 0.45s forwards; opacity: 0; }
-		.rota-animar-cta { animation: rotaFadeInUp 0.8s ease 0.6s forwards; opacity: 0; }
-		.rota-animar-footer { animation: rotaFadeInUp 0.8s ease 0.75s forwards; opacity: 0; }
-
+		.rota-footer p { margin: 0; font-size: 13px; color: #8c8379; }
 		@media (max-width: 768px) {
-			.rota-nav-content {
-				flex-direction: column;
-				gap: 12px;
-				text-align: center;
-			}
-			.rota-menu {
-				gap: 15px;
-				justify-content: center;
-			}
+			.rota-nav-content { flex-direction: column; gap: 12px; text-align: center; }
+			.rota-menu { gap: 15px; justify-content: center; }
 		}
 	</style>
 </head>
 <body>
 
 <div class="rota-container-global">
-	<!-- CABEÇALHO -->
-	<header class="rota-header rota-animar-topo">
+	<header class="rota-header">
 		<div class="rota-nav-content">
 			<a href="./index.html" class="rota-logo"><span>Rota da Vida</span></a>
 			<nav class="rota-menu">
@@ -407,12 +265,12 @@
 		</div>
 	</header>
 
-	<!-- SEÇÃO PRINCIPAL: QUEM É A THAIS -->
-	<section class="rota-card-sobre rota-animar-card">
+	<section class="rota-card-sobre">
 		<div class="rota-avatar-wrapper">
+			<!-- Foto com nome real contendo espaços e codificado -->
 			<img 
-				src="./WhatsApp-Image-2026-09-16-at-11.50.43.jpeg" 
-				onerror="this.onerror=null; this.src='./about_files/WhatsApp-Image-2026-09-16-at-11.50.43.jpeg'; if(!this.src) this.src='./index_files/WhatsApp-Image-2026-09-16-at-11.50.43.jpeg';"
+				src="./WhatsApp%20Image%202026-09-16%20at%2011.50.43.jpeg" 
+				onerror="this.onerror=null; this.src='./WhatsApp Image 2026-09-16 at 11.50.43.jpeg';"
 				alt="Foto de Thais" 
 				class="rota-avatar"
 			>
@@ -428,8 +286,7 @@
 		</p>
 	</section>
 
-	<!-- GALERIA DE VIAGENS (MOMENTS & DESTINATIONS) -->
-	<section class="rota-galeria-secao rota-animar-galeria">
+	<section class="rota-galeria-secao">
 		<div class="rota-title">
 			<h2>Moments on the Road</h2>
 			<p>Little visual postcards from places that shaped my journey.</p>
@@ -440,8 +297,8 @@
 			<div class="rota-foto-card">
 				<div class="rota-foto-img-wrap">
 					<img 
-						src="./Imagem-WhatsApp-2025-07-24-as-11.15.17_30248f5b.jpg" 
-						onerror="this.onerror=null; this.src='./about_files/Imagem-WhatsApp-2025-07-24-as-11.15.17_30248f5b.jpg';"
+						src="./Imagem%20WhatsApp%202025-07-24%20as%2011.15.17_30248f5b.jpg" 
+						onerror="this.onerror=null; this.src='./Imagem-WhatsApp-2025-07-24-as-11.15.17_30248f5b.jpg';"
 						alt="Praia & Natureza" 
 						class="rota-foto-viagem"
 					>
@@ -456,8 +313,8 @@
 			<div class="rota-foto-card">
 				<div class="rota-foto-img-wrap">
 					<img 
-						src="./WhatsApp-Image-2026-09-16-at-15.11.41-scaled.jpeg" 
-						onerror="this.onerror=null; this.src='./about_files/WhatsApp-Image-2026-09-16-at-15.11.41-scaled.jpeg';"
+						src="./WhatsApp%20Image%202026-09-16%20at%2015.11.41-scaled.jpeg" 
+						onerror="this.onerror=null; this.src='./WhatsApp-Image-2026-09-16-at-15.11.41-scaled.jpeg'; if(!this.src) this.src='./WhatsApp%20Image%202026-09-16%20at%2015.11.41.jpeg';"
 						alt="Viagem e Aventura" 
 						class="rota-foto-viagem"
 					>
@@ -472,8 +329,8 @@
 			<div class="rota-foto-card">
 				<div class="rota-foto-img-wrap">
 					<img 
-						src="./WhatsApp-Image-2026-09-16-at-15.11.16.jpeg" 
-						onerror="this.onerror=null; this.src='./about_files/WhatsApp-Image-2026-09-16-at-15.11.16.jpeg';"
+						src="./WhatsApp%20Image%202026-09-16%20at%2015.11.16.jpeg" 
+						onerror="this.onerror=null; this.src='./WhatsApp-Image-2026-09-16-at-15.11.16.jpeg';"
 						alt="Cultura & Cidades" 
 						class="rota-foto-viagem"
 					>
@@ -486,8 +343,7 @@
 		</div>
 	</section>
 
-	<!-- CARDS: PILARES DO BLOG -->
-	<section class="rota-pilares rota-animar-pilares">
+	<section class="rota-pilares">
 		<div class="rota-title">
 			<h2>What Guides This Space</h2>
 			<p>The three foundations behind every story and guide shared here.</p>
@@ -514,8 +370,7 @@
 		</div>
 	</section>
 
-	<!-- CARD CONVITE FINAL -->
-	<section class="rota-card-cta rota-animar-cta">
+	<section class="rota-card-cta">
 		<h2>Ready to explore?</h2>
 		<p>Take a look at the articles on the blog or send a message to connect.</p>
 		<div class="rota-botoes-container">
@@ -524,8 +379,7 @@
 		</div>
 	</section>
 
-	<!-- RODAPÉ -->
-	<footer class="rota-footer rota-animar-footer">
+	<footer class="rota-footer">
 		<p>© 2026 Rota da Vida. Crafted with care & calm thoughts.</p>
 	</footer>
 </div>
