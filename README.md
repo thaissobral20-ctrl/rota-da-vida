@@ -1,13 +1,13 @@
-# 🌿 Rota da Vida - Blog Pessoal
+# 🌿 Rota da Vida - Personal Blog
 
-Acesse o site no ar pelo link oficial abaixo:
+Access the live website through the official link below:
 
 👉 **[https://thaissobral20-ctrl.github.io/rota-da-vida/](https://thaissobral20-ctrl.github.io/rota-da-vida/)**
 
 ---
 
-### 🗺️ Conteúdos disponíveis:
-* **Home:** Apresentação e boas-vindas.
-* **About:** História pessoal e propósito.
-* **Blog:** Artigos, roteiros pela Europa Central e Malta, e dicas de aplicativos de viagem.
-* **Contact:** Formulário e canais de contato.
+### 🗺️ Available Content:
+* **Home:** Introduction and welcome.
+* **About:** Personal story and purpose.
+* **Blog:** Articles, itineraries around Central Europe and Malta, and travel app tips.
+* **Contact:** Contact form and contact channels.
