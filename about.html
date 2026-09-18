@@ -1,603 +1,211 @@
 <!doctype html>
-<html lang="en-US">
+<html lang="pt-BR">
 <head>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<title>Blog - Rota da Vida</title>
-	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,600,700&display=swap">
-	<style>
-		* { box-sizing: border-box; margin: 0; padding: 0; }
-		body {
-			font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-			background-color: #fdfbf7;
-			color: #4a453f;
-			margin: 0;
-			padding: 0;
-		}
-		.rota-container-global {
-			width: 100%;
-			max-width: 1100px;
-			margin: 0 auto;
-			padding: 0 20px;
-		}
-		/* Header */
-		.rota-header {
-			background-color: #f7f4ef;
-			border-bottom: 1px solid #e8e2d5;
-			padding: 15px 0;
-			width: 100vw;
-			position: relative;
-			left: 50%;
-			right: 50%;
-			margin-left: -50vw;
-			margin-right: -50vw;
-			margin-bottom: 35px;
-		}
-		.rota-nav-content {
-			max-width: 1100px;
-			margin: 0 auto;
-			display: flex;
-			justify-content: space-between;
-			align-items: center;
-			padding: 0 20px;
-		}
-		.rota-header a, .rota-header a *, .rota-logo span, .rota-menu a span {
-			color: #6c655d !important;
-			text-decoration: none !important;
-		}
-		.rota-logo span {
-			color: #6b8271 !important;
-			font-size: 20px;
-			font-weight: 700;
-			letter-spacing: 0.5px;
-		}
-		.rota-menu {
-			display: flex;
-			gap: 25px;
-		}
-		.rota-menu a span {
-			font-size: 14px;
-			font-weight: 600;
-			transition: color 0.2s ease;
-		}
-		.rota-menu a:hover span, .rota-menu a.active span {
-			color: #d8a47f !important;
-		}
-		/* Hero Banner */
-		.rota-blog-hero {
-			background-color: #f7f4ef;
-			border: 1px solid #e8e2d5;
-			padding: 45px 30px 35px 30px;
-			border-radius: 18px;
-			text-align: center;
-			box-shadow: 0 8px 24px rgba(74, 69, 63, 0.04);
-			margin-bottom: 45px;
-		}
-		.rota-tag-destaque {
-			font-size: 13px;
-			font-weight: 700;
-			text-transform: uppercase;
-			letter-spacing: 1px;
-			color: #d8a47f;
-			display: block;
-			margin-bottom: 8px;
-		}
-		.rota-blog-hero h2 {
-			font-size: 28px;
-			font-weight: 700;
-			color: #6b8271;
-			margin-bottom: 12px;
-		}
-		.rota-blog-hero p {
-			font-size: 16px;
-			line-height: 1.6;
-			color: #6c655d;
-			max-width: 680px;
-			margin: 0 auto 30px auto;
-		}
-		/* Filter Bar */
-		.rota-filtro-container {
-			display: flex;
-			justify-content: center;
-			gap: 10px;
-			flex-wrap: wrap;
-		}
-		.rota-filtro-btn {
-			background-color: #ffffff;
-			border: 1px solid #e8e2d5;
-			color: #6c655d;
-			padding: 10px 18px;
-			border-radius: 25px;
-			font-size: 13px;
-			font-weight: 600;
-			cursor: pointer;
-			transition: all 0.2s ease;
-		}
-		.rota-filtro-btn:hover {
-			border-color: #6b8271;
-			color: #6b8271;
-		}
-		.rota-filtro-btn.active {
-			background-color: #6b8271;
-			color: #ffffff;
-			border-color: #6b8271;
-		}
-		/* Content Blocks */
-		.rota-bloco-conteudo {
-			margin-bottom: 50px;
-			transition: opacity 0.3s ease;
-		}
-		.rota-bloco-header {
-			text-align: center;
-			margin-bottom: 30px;
-		}
-		.rota-categoria-badge {
-			font-size: 12px;
-			font-weight: 700;
-			text-transform: uppercase;
-			letter-spacing: 1px;
-			color: #d8a47f;
-			display: block;
-			margin-bottom: 6px;
-		}
-		.rota-bloco-header h3 {
-			font-size: 24px;
-			color: #6b8271;
-			margin-bottom: 6px;
-		}
-		.rota-bloco-header p {
-			font-size: 15px;
-			color: #6c655d;
-			margin: 0;
-		}
-		/* Itinerary Grid */
-		.rota-grid-cards {
-			display: grid;
-			grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-			gap: 25px;
-		}
-		.rota-card-artigo {
-			background-color: #f7f4ef;
-			border: 1px solid #e8e2d5;
-			border-radius: 16px;
-			overflow: hidden;
-			box-shadow: 0 6px 18px rgba(74, 69, 63, 0.03);
-			transition: transform 0.3s ease, box-shadow 0.3s ease;
-			display: flex;
-			flex-direction: column;
-		}
-		.rota-card-artigo:hover {
-			transform: translateY(-5px);
-			box-shadow: 0 12px 26px rgba(74, 69, 63, 0.08);
-		}
-		.rota-artigo-img-wrap {
-			width: 100%;
-			height: 200px;
-			position: relative;
-			overflow: hidden;
-		}
-		.rota-artigo-img {
-			width: 100% !important;
-			height: 100% !important;
-			object-fit: cover !important;
-			display: block !important;
-			transition: transform 0.4s ease;
-		}
-		.rota-card-artigo:hover .rota-artigo-img {
-			transform: scale(1.05);
-		}
-		.rota-badge-tempo {
-			position: absolute;
-			bottom: 12px;
-			left: 12px;
-			background-color: rgba(74, 69, 63, 0.85);
-			color: #ffffff;
-			padding: 5px 12px;
-			border-radius: 20px;
-			font-size: 11px;
-			font-weight: 600;
-			backdrop-filter: blur(4px);
-		}
-		.rota-artigo-corpo {
-			padding: 22px;
-			display: flex;
-			flex-direction: column;
-			flex-grow: 1;
-		}
-		.rota-artigo-corpo h4 {
-			margin: 0 0 10px 0;
-			font-size: 17px;
-			color: #4a453f;
-		}
-		.rota-artigo-corpo p {
-			font-size: 14px;
-			line-height: 1.6;
-			color: #6c655d;
-			margin: 0 0 18px 0;
-			flex-grow: 1;
-		}
-		.rota-card-footer {
-			display: flex;
-			justify-content: space-between;
-			align-items: center;
-			font-size: 12px;
-			border-top: 1px solid #e8e2d5;
-			padding-top: 14px;
-			color: #8c8379;
-		}
-		.rota-link-artigo {
-			color: #d8a47f !important;
-			font-weight: 700;
-			text-decoration: none !important;
-		}
-		/* Apps Grid */
-		.rota-apps-grid {
-			display: grid;
-			grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-			gap: 20px;
-		}
-		.rota-app-card {
-			background-color: #f7f4ef;
-			border: 1px solid #e8e2d5;
-			padding: 26px 20px;
-			border-radius: 16px;
-			text-align: center;
-			box-shadow: 0 4px 14px rgba(74, 69, 63, 0.03);
-			transition: transform 0.2s ease;
-		}
-		.rota-app-card:hover {
-			transform: translateY(-4px);
-		}
-		.rota-app-icone {
-			font-size: 34px;
-			margin-bottom: 12px;
-		}
-		.rota-app-card h4 {
-			margin: 0 0 4px 0;
-			font-size: 16px;
-			color: #4a453f;
-		}
-		.rota-app-funcao {
-			font-size: 12px;
-			font-weight: 700;
-			color: #d8a47f;
-			text-transform: uppercase;
-			letter-spacing: 0.5px;
-			margin-bottom: 10px;
-		}
-		.rota-app-card p:last-child {
-			font-size: 13px;
-			line-height: 1.5;
-			color: #6c655d;
-			margin: 0;
-		}
-		/* Tips Grid */
-		.rota-dicas-grid {
-			display: grid;
-			grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-			gap: 22px;
-		}
-		.rota-dica-card {
-			background-color: #f7f4ef;
-			border: 1px solid #e8e2d5;
-			padding: 30px 24px;
-			border-radius: 16px;
-			position: relative;
-			box-shadow: 0 4px 14px rgba(74, 69, 63, 0.03);
-		}
-		.rota-dica-num {
-			font-size: 28px;
-			font-weight: 800;
-			color: #d8a47f;
-			opacity: 0.6;
-			display: block;
-			margin-bottom: 10px;
-		}
-		.rota-dica-card h4 {
-			margin: 0 0 10px 0;
-			font-size: 16px;
-			color: #4a453f;
-		}
-		.rota-dica-card p {
-			font-size: 14px;
-			line-height: 1.6;
-			color: #6c655d;
-			margin: 0;
-		}
-		/* Continent Gallery Grid */
-		.rota-continentes-grid {
-			display: grid;
-			grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-			gap: 22px;
-		}
-		.rota-continente-card {
-			background-color: #f7f4ef;
-			border: 1px solid #e8e2d5;
-			border-radius: 16px;
-			overflow: hidden;
-			box-shadow: 0 4px 15px rgba(74, 69, 63, 0.03);
-			transition: transform 0.3s ease;
-		}
-		.rota-continente-card:hover {
-			transform: translateY(-5px);
-		}
-		.rota-continente-img-wrap {
-			width: 100%;
-			height: 200px;
-			overflow: hidden;
-		}
-		.rota-continente-img {
-			width: 100% !important;
-			height: 100% !important;
-			object-fit: cover !important;
-			display: block !important;
-			transition: transform 0.4s ease;
-		}
-		.rota-continente-card:hover .rota-continente-img {
-			transform: scale(1.05);
-		}
-		.rota-continente-info {
-			padding: 18px;
-		}
-		.rota-continente-tag {
-			font-size: 11px;
-			font-weight: 700;
-			text-transform: uppercase;
-			letter-spacing: 0.8px;
-			color: #d8a47f;
-			display: block;
-			margin-bottom: 6px;
-		}
-		.rota-continente-info h4 {
-			margin: 0;
-			font-size: 15px;
-			line-height: 1.5;
-			color: #4a453f;
-		}
-		/* Footer */
-		.rota-footer {
-			background-color: #f7f4ef;
-			border-top: 1px solid #e8e2d5;
-			padding: 22px 0;
-			width: 100vw;
-			position: relative;
-			left: 50%;
-			right: 50%;
-			margin-left: -50vw;
-			margin-right: -50vw;
-			text-align: center;
-			margin-top: 50px;
-		}
-		.rota-footer p {
-			margin: 0;
-			font-size: 13px;
-			color: #8c8379;
-		}
-		@media (max-width: 768px) {
-			.rota-nav-content {
-				flex-direction: column;
-				gap: 12px;
-				text-align: center;
-			}
-			.rota-menu {
-				gap: 15px;
-				justify-content: center;
-			}
-		}
-	</style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>About - Rota da Vida</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:400,600,700&display=swap">
+    <style>
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body {
+            font-family: 'Roboto', -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+            background-color: #fdfbf7;
+            color: #4a453f;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+        .rota-header {
+            background-color: #f7f4ef;
+            border-bottom: 1px solid #e8e2d5;
+            padding: 18px 20px;
+        }
+        .rota-nav-content {
+            max-width: 1000px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .rota-logo {
+            color: #6b8271;
+            font-size: 22px;
+            font-weight: 700;
+            text-decoration: none;
+            letter-spacing: 0.5px;
+        }
+        .rota-menu { display: flex; gap: 20px; }
+        .rota-menu a {
+            color: #6c655d;
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: 600;
+            transition: color 0.2s;
+        }
+        .rota-menu a:hover, .rota-menu a.active { color: #d8a47f; }
+        .rota-main {
+            flex: 1;
+            max-width: 850px;
+            width: 100%;
+            margin: 40px auto;
+            padding: 0 20px;
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+        }
+        .rota-card {
+            background-color: #f7f4ef;
+            border: 1px solid #e8e2d5;
+            padding: 45px 35px;
+            border-radius: 18px;
+            box-shadow: 0 8px 24px rgba(74, 69, 63, 0.04);
+            text-align: center;
+        }
+        .rota-avatar {
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 5px solid #ffffff;
+            box-shadow: 0 10px 25px rgba(107, 130, 113, 0.25);
+            margin-bottom: 25px;
+        }
+        .rota-subtitulo {
+            font-size: 13px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: #d8a47f;
+            display: block;
+            margin-bottom: 8px;
+        }
+        .rota-card h1 {
+            font-size: 30px;
+            color: #6b8271;
+            margin-bottom: 20px;
+        }
+        .rota-card p {
+            font-size: 16px;
+            line-height: 1.8;
+            color: #6c655d;
+            margin-bottom: 20px;
+            text-align: left;
+        }
+        .rota-pilares {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 20px;
+            margin-top: 30px;
+            text-align: center;
+        }
+        .rota-pilar-item {
+            background: #ffffff;
+            border: 1px solid #e8e2d5;
+            border-radius: 14px;
+            padding: 22px 18px;
+        }
+        .rota-pilar-icone {
+            font-size: 28px;
+            margin-bottom: 10px;
+        }
+        .rota-pilar-item h3 {
+            font-size: 17px;
+            color: #6b8271;
+            margin-bottom: 8px;
+        }
+        .rota-pilar-item p {
+            font-size: 14px;
+            line-height: 1.5;
+            color: #6c655d;
+            margin-bottom: 0;
+            text-align: center;
+        }
+        .rota-btn-voltar {
+            display: inline-block;
+            margin-top: 30px;
+            padding: 12px 28px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 14px;
+            background-color: #d8a47f;
+            color: #ffffff;
+            transition: background-color 0.2s, transform 0.2s;
+        }
+        .rota-btn-voltar:hover {
+            background-color: #c4916d;
+            transform: scale(1.03);
+        }
+        .rota-footer {
+            background-color: #f7f4ef;
+            border-top: 1px solid #e8e2d5;
+            padding: 22px 0;
+            text-align: center;
+            font-size: 13px;
+            color: #8c8379;
+        }
+        @media (max-width: 768px) {
+            .rota-nav-content {
+                flex-direction: column;
+                gap: 12px;
+            }
+            .rota-menu { gap: 15px; }
+            .rota-card { padding: 30px 20px; }
+        }
+    </style>
 </head>
 <body>
+    <header class="rota-header">
+        <div class="rota-nav-content">
+            <a href="./index.html" class="rota-logo">Rota da Vida</a>
+            <nav class="rota-menu">
+                <a href="./index.html">Home</a>
+                <a href="./about.html" class="active">About</a>
+                <a href="./blog.html">Blog</a>
+                <a href="./contact.html">Contact</a>
+            </nav>
+        </div>
+    </header>
 
-<div class="rota-container-global">
-	<!-- HEADER -->
-	<header class="rota-header">
-		<div class="rota-nav-content">
-			<a href="./index.html" class="rota-logo"><span>Rota da Vida</span></a>
-			<nav class="rota-menu">
-				<a href="./index.html"><span>Home</span></a>
-				<a href="./about.html"><span>About</span></a>
-				<a href="./blog.html" class="active"><span>Blog</span></a>
-				<a href="./contact.html"><span>Contact</span></a>
-			</nav>
-		</div>
-	</header>
+    <main class="rota-main">
+        <article class="rota-card">
+            <!-- Imagem com verificação automática de pasta -->
+            <img src="./WhatsApp-Image-2026-09-16-at-11.50.43.jpeg" 
+                 onerror="this.onerror=null; this.src='./index_files/WhatsApp-Image-2026-09-16-at-11.50.43.jpeg';" 
+                 alt="Thais Sobral" 
+                 class="rota-avatar">
 
-	<!-- HERO SECTION -->
-	<section class="rota-blog-hero">
-		<span class="rota-tag-destaque">Travel, Finance & Practical Guides</span>
-		<h2>Travel Logs & Practical Insights</h2>
-		<p>Detailed itineraries, essential travel apps, smart money habits to fund your dreams, and visual postcards from around the globe.</p>
-		
-		<!-- FILTER BAR -->
-		<div class="rota-filtro-container">
-			<button class="rota-filtro-btn active" onclick="filtrarSecao('todos', this)">All</button>
-			<button class="rota-filtro-btn" onclick="filtrarSecao('itinerarios', this)">🗺️ Itineraries</button>
-			<button class="rota-filtro-btn" onclick="filtrarSecao('apps', this)">📱 Travel Apps</button>
-			<button class="rota-filtro-btn" onclick="filtrarSecao('economia', this)">💰 Money-Saving Tips</button>
-			<button class="rota-filtro-btn" onclick="filtrarSecao('continentes', this)">📸 By Continent</button>
-		</div>
-	</section>
+            <span class="rota-subtitulo">My Story & Purpose</span>
+            <h1>About Me</h1>
+            
+            <p>Olá! Eu sou a Thais, e criei o <strong>Rota da Vida</strong> para compartilhar uma das minhas maiores paixões: explorar novos lugares pelo mundo com tranquilidade, organização e propósito.</p>
 
-	<!-- SECTION 1: ITINERARIES -->
-	<section class="rota-bloco-conteudo rota-filtro-alvo" data-categoria="itinerarios">
-		<div class="rota-bloco-header">
-			<span class="rota-categoria-badge">Planning Ahead</span>
-			<h3>🗺️ Curated Itineraries</h3>
-			<p>Thoughtful routes crafted to help you travel with ease, intention, and zero rush.</p>
-		</div>
+            <p>Acredito que viajar não deve ser um privilégio distante, mas uma conquista viável através de escolhas financeiras conscientes e bom planejamento. Aqui, divido não apenas fotos de viagens, mas roteiros reais, práticas de economia cotidiana e estratégias que me permitiram transformar desejos em passagens carimbadas.</p>
 
-		<div class="rota-grid-cards">
-			<!-- Itinerary Card 1 -->
-			<article class="rota-card-artigo">
-				<div class="rota-artigo-img-wrap">
-					<img decoding="async" src="./blog_files/WhatsApp-Image-2026-09-16-at-16.25.37-scaled.jpeg" alt="Historic European Towns" class="rota-artigo-img" onerror="this.src='./index_files/WhatsApp-Image-2026-09-16-at-16.25.37-scaled.jpeg'">
-					<span class="rota-badge-tempo">7 to 10 Days</span>
-				</div>
-				<div class="rota-artigo-corpo">
-					<h4>A Mini Winter Backpacking Adventure Through Central Europe: Budapest, Bratislava, Vienna & Prague</h4>
-					<p>Beautiful & Affordable Winter Destinations in Europe.</p>
-					<div class="rota-card-footer">
-						<span>Best time: Spring / Autumn</span>
-						<a href="./itinerary1.html" class="rota-link-artigo">View Guide →</a>
-					</div>
-				</div>
-			</article>
+            <div class="rota-pilares">
+                <div class="rota-pilar-item">
+                    <div class="rota-pilar-icone">🗺️</div>
+                    <h3>Viagens Reais</h3>
+                    <p>Roteiros econômicos e autênticos sem estresse logístico.</p>
+                </div>
+                <div class="rota-pilar-item">
+                    <div class="rota-pilar-icone">💰</div>
+                    <h3>Educação Financeira</h3>
+                    <p>Hábitos simples para guardar e fazer seu dinheiro render.</p>
+                </div>
+                <div class="rota-pilar-item">
+                    <div class="rota-pilar-icone">🌿</div>
+                    <h3>Estilo de Vida</h3>
+                    <p>Viver o presente com calma, curiosidade e leveza.</p>
+                </div>
+            </div>
 
-			<!-- Itinerary Card 2 -->
-			<article class="rota-card-artigo">
-				<div class="rota-artigo-img-wrap">
-					<img decoding="async" src="./blog_files/WhatsApp-Image-2026-09-16-at-17.51.25-scaled.jpeg" alt="Coastal Paradise" class="rota-artigo-img" onerror="this.src='./index_files/WhatsApp-Image-2026-09-16-at-17.51.25-scaled.jpeg'">
-					<span class="rota-badge-tempo">7 Days</span>
-				</div>
-				<div class="rota-artigo-corpo">
-					<h4>Malta: An Affordable Paradise in the Mediterranean</h4>
-					<p>Incredible islands, historic cities, and Baroque architecture.</p>
-					<div class="rota-card-footer">
-						<span>Best time: Sunny dry season</span>
-						<a href="./itinerary2.html" class="rota-link-artigo">View Guide →</a>
-					</div>
-				</div>
-			</article>
-		</div>
-	</section>
+            <a href="./blog.html" class="rota-btn-voltar">Explore the Blog →</a>
+        </article>
+    </main>
 
-	<!-- SECTION 2: TRAVEL APPS -->
-	<section class="rota-bloco-conteudo rota-filtro-alvo" data-categoria="apps">
-		<div class="rota-bloco-header">
-			<span class="rota-categoria-badge">Digital Toolkit</span>
-			<h3>📱 Essential Travel Apps</h3>
-			<p>The applications that make managing logistics, currencies, and routes seamless.</p>
-		</div>
-
-		<div class="rota-apps-grid">
-			<div class="rota-app-card">
-				<div class="rota-app-icone">💳</div>
-				<h4>Wise & Revolut</h4>
-				<p class="rota-app-funcao">Global Currency & Payments</p>
-				<p>Multi-currency cards for low exchange fees and fair rates abroad, avoiding the stress of carrying large cash amounts.</p>
-			</div>
-
-			<div class="rota-app-card">
-				<div class="rota-app-icone">📍</div>
-				<h4>Maps.me / Offline Maps</h4>
-				<p class="rota-app-funcao">Zero-Data Navigation</p>
-				<p>Downloading local maps in advance guarantees smooth navigation even when cellular roaming drops out in remote areas.</p>
-			</div>
-
-			<div class="rota-app-card">
-				<div class="rota-app-icone">🤝</div>
-				<h4>Splitwise</h4>
-				<p class="rota-app-funcao">Fair Expense Sharing</p>
-				<p>Keeps track of group dinners, transport passes, and grocery runs clearly and transparently with travel companions.</p>
-			</div>
-
-			<div class="rota-app-card">
-				<div class="rota-app-icone">✈️</div>
-				<h4>Google Flights & Skyscanner</h4>
-				<p class="rota-app-funcao">Fare Tracking & Alerts</p>
-				<p>Essential for comparing airline price trends, spotting sweet spot dates, and locking in smart booking windows.</p>
-			</div>
-		</div>
-
-		<div style="text-align: center; margin-top: 30px;">
-			<a href="./apps.html" class="rota-link-artigo" style="background-color: #d8a47f; color: #ffffff !important; padding: 12px 28px; border-radius: 30px; display: inline-block; font-weight: 600; text-decoration: none;">
-				📱 View All Apps & Exclusive Discounts →
-			</a>
-		</div>
-	</section>
-
-	<!-- SECTION 3: MONEY-SAVING TIPS -->
-	<section class="rota-bloco-conteudo rota-filtro-alvo" data-categoria="economia">
-		<div class="rota-bloco-header">
-			<span class="rota-categoria-badge">Financial Calm</span>
-			<h3>💰 Practical Ways to Travel for Less</h3>
-			<p>Seeing the world doesn't require overspending: smart resource management unlocks freedom.</p>
-		</div>
-
-		<div class="rota-dicas-grid">
-			<div class="rota-dica-card">
-				<span class="rota-dica-num">01</span>
-				<h4>Shop Local Grocery Markets</h4>
-				<p>Having breakfast or gathering picnic lunches from local markets can trim down daily dining expenses by up to 40%.</p>
-			</div>
-
-			<div class="rota-dica-card">
-				<span class="rota-dica-num">02</span>
-				<h4>Public Transit & Multi-Day Passes</h4>
-				<p>Skip pricey airport taxis. Metro networks, regional trains, and 24h to 72h city passes offer large savings and a local perspective.</p>
-			</div>
-
-			<div class="rota-dica-card">
-				<span class="rota-dica-num">03</span>
-				<h4>Free Museum & Culture Days</h4>
-				<p>Most major cultural capitals reserve specific afternoons or the first Sunday of each month for free admission to landmark exhibits.</p>
-			</div>
-		</div>
-	</section>
-
-	<!-- SECTION 4: GALLERY BY CONTINENT -->
-	<section class="rota-bloco-conteudo rota-filtro-alvo" data-categoria="continentes">
-		<div class="rota-bloco-header">
-			<span class="rota-categoria-badge">Postcards</span>
-			<h3>📸 Across the Continents</h3>
-			<p>Visual moments and memories cataloged across different regions of the globe.</p>
-		</div>
-
-		<div class="rota-continentes-grid">
-			<div class="rota-continente-card">
-				<div class="rota-continente-img-wrap">
-					<img decoding="async" src="./blog_files/WhatsApp-Image-2026-09-17-at-18.05.39-8.jpeg" alt="South America" class="rota-continente-img" onerror="this.src='./index_files/WhatsApp-Image-2026-09-17-at-18.05.39-8.jpeg'">
-				</div>
-				<div class="rota-continente-info">
-					<span class="rota-continente-tag">South America</span>
-					<h4>Untamed nature, warm cultures, and awe-inspiring coastlines</h4>
-				</div>
-			</div>
-
-			<div class="rota-continente-card">
-				<div class="rota-continente-img-wrap">
-					<img decoding="async" src="./blog_files/WhatsApp-Image-2026-09-17-at-18.18.25.jpeg" alt="Europe" class="rota-continente-img" onerror="this.src='./index_files/WhatsApp-Image-2026-09-17-at-18.18.25.jpeg'">
-				</div>
-				<div class="rota-continente-info">
-					<span class="rota-continente-tag">Europe</span>
-					<h4>Living history on every corner, cozy cafés, and train journeys</h4>
-				</div>
-			</div>
-
-			<div class="rota-continente-card">
-				<div class="rota-continente-img-wrap">
-					<img decoding="async" src="./blog_files/WhatsApp-Image-2026-09-16-at-14.56.34-1-scaled.jpeg" alt="Next Horizons" class="rota-continente-img" onerror="this.src='./index_files/WhatsApp-Image-2026-09-16-at-14.56.34-1-scaled.jpeg'">
-				</div>
-				<div class="rota-continente-info">
-					<span class="rota-continente-tag">Asia</span>
-					<h4>Future adventures and new destinations added to the world map</h4>
-				</div>
-			</div>
-		</div>
-	</section>
-
-	<!-- FOOTER -->
-	<footer class="rota-footer">
-		<p>© 2026 Rota da Vida. Crafted with care & calm thoughts.</p>
-	</footer>
-</div>
-
-<script>
-	function filtrarSecao(categoria, botaoClicado) {
-		const botoes = document.querySelectorAll('.rota-filtro-btn');
-		botoes.forEach(btn => btn.classList.remove('active'));
-		botaoClicado.classList.add('active');
-
-		const secoes = document.querySelectorAll('.rota-filtro-alvo');
-		secoes.forEach(secao => {
-			if (categoria === 'todos' || secao.getAttribute('data-categoria') === categoria) {
-				secao.style.display = 'block';
-			} else {
-				secao.style.display = 'none';
-			}
-		});
-	}
-</script>
-
+    <footer class="rota-footer">
+        <p>© 2026 Rota da Vida. Crafted with care & calm thoughts.</p>
+    </footer>
 </body>
 </html>
