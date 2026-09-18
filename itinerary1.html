@@ -1,202 +1,517 @@
 <!doctype html>
 <html lang="en-US">
 <head>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<title>Mini Winter Central Europe - Rota da Vida</title>
-	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,600,700&display=swap">
-	<style>
-		* { box-sizing: border-box; margin: 0; padding: 0; }
-		body {
-			font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-			background-color: #fdfbf7;
-			color: #4a453f;
-			margin: 0;
-			padding: 0;
-		}
-		.rota-container-global {
-			width: 100%;
-			max-width: 900px;
-			margin: 0 auto;
-			padding: 0 20px;
-		}
-		.rota-header {
-			background-color: #f7f4ef;
-			border-bottom: 1px solid #e8e2d5;
-			padding: 15px 0;
-			width: 100vw;
-			position: relative;
-			left: 50%;
-			right: 50%;
-			margin-left: -50vw;
-			margin-right: -50vw;
-			margin-bottom: 35px;
-		}
-		.rota-nav-content {
-			max-width: 1100px;
-			margin: 0 auto;
-			display: flex;
-			justify-content: space-between;
-			align-items: center;
-			padding: 0 20px;
-		}
-		.rota-header a, .rota-header a *, .rota-logo span, .rota-menu a span {
-			color: #6c655d !important;
-			text-decoration: none !important;
-		}
-		.rota-logo span {
-			color: #6b8271 !important;
-			font-size: 20px;
-			font-weight: 700;
-			letter-spacing: 0.5px;
-		}
-		.rota-menu { display: flex; gap: 25px; }
-		.rota-menu a span {
-			font-size: 14px;
-			font-weight: 600;
-			transition: color 0.2s ease;
-		}
-		.rota-menu a:hover span { color: #d8a47f !important; }
-		.rota-post-header {
-			text-align: center;
-			margin-bottom: 30px;
-		}
-		.rota-post-tag {
-			font-size: 12px;
-			font-weight: 700;
-			text-transform: uppercase;
-			letter-spacing: 1px;
-			color: #d8a47f;
-			display: block;
-			margin-bottom: 10px;
-		}
-		.rota-post-header h1 {
-			font-size: 32px;
-			color: #6b8271;
-			margin-bottom: 15px;
-			line-height: 1.3;
-		}
-		.rota-post-meta {
-			font-size: 13px;
-			color: #8c8379;
-			margin-bottom: 25px;
-		}
-		.rota-post-hero-img {
-			width: 100%;
-			height: 380px;
-			border-radius: 18px;
-			overflow: hidden;
-			margin-bottom: 35px;
-			box-shadow: 0 8px 24px rgba(74, 69, 63, 0.06);
-		}
-		.rota-post-hero-img img {
-			width: 100%;
-			height: 100%;
-			object-fit: cover;
-			display: block;
-		}
-		.rota-post-content {
-			background-color: #f7f4ef;
-			border: 1px solid #e8e2d5;
-			border-radius: 18px;
-			padding: 40px;
-			box-shadow: 0 8px 24px rgba(74, 69, 63, 0.04);
-			line-height: 1.8;
-			font-size: 16px;
-			color: #554f47;
-			margin-bottom: 40px;
-		}
-		.rota-post-content h2 {
-			color: #6b8271;
-			font-size: 22px;
-			margin: 30px 0 15px 0;
-		}
-		.rota-post-content h2:first-child { margin-top: 0; }
-		.rota-post-content p { margin-bottom: 18px; }
-		.rota-post-content ul {
-			margin-left: 20px;
-			margin-bottom: 20px;
-		}
-		.rota-post-content li { margin-bottom: 8px; }
-		.rota-voltar-btn {
-			display: inline-block;
-			background-color: #6b8271;
-			color: #ffffff !important;
-			text-decoration: none !important;
-			padding: 12px 26px;
-			border-radius: 25px;
-			font-weight: 600;
-			font-size: 14px;
-			margin-bottom: 50px;
-			transition: background-color 0.2s ease;
-		}
-		.rota-voltar-btn:hover { background-color: #586c5d; }
-		.rota-footer {
-			background-color: #f7f4ef;
-			border-top: 1px solid #e8e2d5;
-			padding: 22px 0;
-			width: 100vw;
-			position: relative;
-			left: 50%;
-			right: 50%;
-			margin-left: -50vw;
-			margin-right: -50vw;
-			text-align: center;
-		}
-		.rota-footer p { margin: 0; font-size: 13px; color: #8c8379; }
-		@media (max-width: 768px) {
-			.rota-post-hero-img { height: 240px; }
-			.rota-post-content { padding: 25px; }
-			.rota-post-header h1 { font-size: 24px; }
-		}
-	</style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Mini Winter Backpacking Trip - Rota da Vida</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,600,700&display=swap">
+    <style>
+        .page-header, .page-title, h1.entry-title, .elementor-page-title, .site-title, .site-branding {
+            display: none !important;
+        }
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+            background-color: #fdfbf7;
+            color: #4a453f;
+            margin: 0;
+            padding: 0;
+        }
+        .rota-container-global {
+            width: 100%;
+            max-width: 1100px;
+            margin: 0 auto !important;
+            padding: 0 20px;
+        }
+        .rota-header {
+            background-color: #f7f4ef;
+            border-bottom: 1px solid #e8e2d5;
+            padding: 15px 0;
+            width: 100vw;
+            position: relative;
+            left: 50%;
+            right: 50%;
+            margin-left: -50vw;
+            margin-right: -50vw;
+            margin-bottom: 35px;
+        }
+        .rota-nav-content {
+            max-width: 1100px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 20px;
+        }
+        .rota-header a, .rota-header a *, .rota-logo span, .rota-menu a span {
+            color: #6c655d !important;
+            text-decoration: none !important;
+        }
+        .rota-logo span {
+            color: #6b8271 !important;
+            font-size: 20px;
+            font-weight: 700;
+            letter-spacing: 0.5px;
+        }
+        .rota-menu { display: flex; gap: 25px; }
+        .rota-menu a span {
+            font-size: 14px;
+            font-weight: 600;
+            transition: color 0.2s ease;
+        }
+        .rota-menu a:hover span, .rota-menu a.active span { color: #d8a47f !important; }
+        .rota-post-conteudo {
+            max-width: 820px;
+            margin: 0 auto 50px auto;
+            background-color: #f7f4ef;
+            border: 1px solid #e8e2d5;
+            border-radius: 18px;
+            padding: 40px 35px;
+            box-shadow: 0 8px 24px rgba(74, 69, 63, 0.04);
+        }
+        .rota-post-voltar a {
+            font-size: 13px;
+            font-weight: 600;
+            color: #6b8271 !important;
+            text-decoration: none !important;
+            display: inline-block;
+            margin-bottom: 15px;
+            transition: color 0.2s ease;
+        }
+        .rota-post-voltar a:hover { color: #d8a47f !important; }
+        .rota-tag-destaque {
+            font-size: 12px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: #d8a47f;
+            display: block;
+            margin-bottom: 8px;
+        }
+        .rota-post-header h1 {
+            font-size: 28px;
+            font-weight: 700;
+            color: #6b8271;
+            margin: 0 0 10px 0;
+            line-height: 1.3;
+        }
+        .rota-post-subtitulo {
+            font-size: 16px;
+            font-weight: 600;
+            color: #4a453f;
+            margin: 0 0 10px 0;
+        }
+        .rota-meta-info { font-size: 12px; color: #8c8379; margin-bottom: 25px; }
+        .rota-post-banner {
+            width: 100%;
+            height: 360px;
+            border-radius: 14px;
+            overflow: hidden;
+            margin-bottom: 30px;
+            box-shadow: 0 4px 15px rgba(74, 69, 63, 0.06);
+        }
+        .rota-banner-img {
+            width: 100% !important;
+            height: 100% !important;
+            object-fit: cover !important;
+            display: block !important;
+        }
+        .rota-caixa-resumo {
+            background-color: #ffffff;
+            border-left: 4px solid #d8a47f;
+            padding: 16px 20px;
+            border-radius: 0 12px 12px 0;
+            font-size: 15px;
+            font-style: italic;
+            line-height: 1.6;
+            color: #6c655d;
+            margin-bottom: 30px;
+        }
+        .rota-caixa-resumo p { margin: 0; }
+        .rota-grid-fatos {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
+            gap: 12px;
+            margin-bottom: 35px;
+        }
+        .rota-fato-card {
+            background-color: #ffffff;
+            border: 1px solid #e8e2d5;
+            border-radius: 12px;
+            padding: 14px;
+            text-align: center;
+        }
+        .rota-fato-icone { font-size: 20px; display: block; margin-bottom: 4px; }
+        .rota-fato-card strong { color: #6b8271; font-size: 13.5px; display: block; margin-bottom: 4px; }
+        .rota-fato-card p { margin: 0; font-size: 12px; color: #6c655d; line-height: 1.3; }
+        .rota-secao-destino h2 {
+            font-size: 20px;
+            color: #6b8271;
+            margin: 0 0 14px 0;
+            padding-bottom: 8px;
+            border-bottom: 1px solid #e8e2d5;
+        }
+        .rota-secao-destino h3 {
+            font-size: 16px;
+            color: #4a453f;
+            margin: 20px 0 10px 0;
+        }
+        .rota-secao-destino p { font-size: 15px; line-height: 1.7; color: #6c655d; margin-bottom: 16px; }
+        .rota-dia-card {
+            background-color: #ffffff;
+            border: 1px solid #e8e2d5;
+            border-radius: 14px;
+            padding: 24px;
+            margin-bottom: 25px;
+            box-shadow: 0 2px 10px rgba(74, 69, 63, 0.02);
+        }
+        .rota-destaques-dia {
+            background-color: #f7f4ef;
+            border-left: 3px solid #6b8271;
+            padding: 10px 14px;
+            border-radius: 0 8px 8px 0;
+            font-size: 13.5px;
+            color: #4a453f;
+            margin-top: 10px;
+        }
+        .rota-destaques-dia strong { color: #6b8271; }
+        .rota-dica-alerta {
+            background-color: #fcfbf9;
+            border: 1px solid #e8e2d5;
+            border-radius: 12px;
+            padding: 16px 20px;
+            display: flex;
+            gap: 14px;
+            align-items: flex-start;
+            margin: 20px 0;
+        }
+        .rota-alerta-erro {
+            background-color: #fff9f6;
+            border-color: #f2cfbf;
+        }
+        .rota-alerta-erro strong { color: #c46849; }
+        .rota-alerta-icon { font-size: 22px; }
+        .rota-dica-alerta strong { color: #6b8271; font-size: 14px; }
+        .rota-dica-alerta p { margin: 4px 0 0 0; font-size: 13.5px; line-height: 1.5; }
+        .rota-lista-destaques {
+            list-style: none;
+            padding: 0;
+            margin: 0 0 20px 0;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 8px;
+        }
+        .rota-lista-destaques li {
+            background-color: #f7f4ef;
+            border: 1px solid #e8e2d5;
+            padding: 8px 12px;
+            border-radius: 8px;
+            font-size: 13.5px;
+            color: #4a453f;
+        }
+        .rota-lista-destaques li::before {
+            content: "✦";
+            color: #d8a47f;
+            font-size: 11px;
+            margin-right: 6px;
+        }
+        .rota-tabela-wrapper {
+            overflow-x: auto;
+            margin: 15px 0 30px 0;
+        }
+        .rota-tabela-custos {
+            width: 100%;
+            border-collapse: collapse;
+            background-color: #ffffff;
+            border-radius: 12px;
+            overflow: hidden;
+            border: 1px solid #e8e2d5;
+        }
+        .rota-tabela-custos th, .rota-tabela-custos td {
+            padding: 12px 16px;
+            text-align: left;
+            font-size: 14px;
+        }
+        .rota-tabela-custos th {
+            background-color: #6b8271;
+            color: #ffffff;
+            font-weight: 600;
+        }
+        .rota-tabela-custos tr:nth-child(even) { background-color: #faf8f5; }
+        .rota-tabela-custos td:last-child {
+            font-weight: 600;
+            color: #4a453f;
+        }
+        .rota-box-reflexao {
+            background-color: #ffffff;
+            border: 1px solid #e8e2d5;
+            border-radius: 14px;
+            padding: 25px;
+            margin-top: 30px;
+        }
+        .rota-box-reflexao h2 {
+            margin-top: 0 !important;
+            border-bottom: none !important;
+            color: #d8a47f !important;
+        }
+        .rota-rodape-artigo {
+            text-align: center;
+            margin-top: 40px;
+            padding-top: 25px;
+            border-top: 1px solid #e8e2d5;
+        }
+        .rota-btn {
+            display: inline-block;
+            padding: 12px 28px;
+            border-radius: 30px;
+            text-decoration: none !important;
+            font-weight: 600;
+            font-size: 14px;
+            transition: background-color 0.2s ease, transform 0.2s ease;
+        }
+        .rota-btn-primario { background-color: #d8a47f; color: #ffffff !important; }
+        .rota-btn-primario:hover { background-color: #c4916d; transform: scale(1.04); }
+        .rota-footer {
+            background-color: #f7f4ef;
+            border-top: 1px solid #e8e2d5;
+            padding: 22px 0;
+            width: 100vw;
+            position: relative;
+            left: 50%;
+            right: 50%;
+            margin-left: -50vw;
+            margin-right: -50vw;
+            text-align: center;
+        }
+        .rota-footer p { margin: 0; font-size: 13px; color: #8c8379; }
+        @keyframes rotaFadeInUp {
+            from { opacity: 0; transform: translateY(18px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .rota-animar-topo { animation: rotaFadeInUp 0.6s ease forwards; }
+        .rota-animar-card { animation: rotaFadeInUp 0.8s ease 0.15s forwards; }
+        @media (max-width: 768px) {
+            .rota-nav-content { flex-direction: column; gap: 12px; text-align: center; }
+            .rota-menu { gap: 15px; justify-content: center; }
+            .rota-post-conteudo { padding: 25px 20px; }
+            .rota-post-header h1 { font-size: 22px; }
+            .rota-post-banner { height: 220px; }
+        }
+    </style>
 </head>
 <body>
 
 <div class="rota-container-global">
-	<header class="rota-header">
-		<div class="rota-nav-content">
-			<a href="./index.html" class="rota-logo"><span>Rota da Vida</span></a>
-			<nav class="rota-menu">
-				<a href="./index.html"><span>Home</span></a>
-				<a href="./about.html"><span>About</span></a>
-				<a href="./blog.html"><span>Blog</span></a>
-				<a href="./contact.html"><span>Contact</span></a>
-			</nav>
-		</div>
-	</header>
+    <!-- HEADER -->
+    <header class="rota-header rota-animar-topo">
+        <div class="rota-nav-content">
+            <a href="./index.html" class="rota-logo"><span>Rota da Vida</span></a>
+            <nav class="rota-menu">
+                <a href="./index.html"><span>Home</span></a>
+                <a href="./about.html"><span>About</span></a>
+                <a href="./blog.html" class="active"><span>Blog</span></a>
+                <a href="./contact.html"><span>Contact</span></a>
+            </nav>
+        </div>
+    </header>
 
-	<div class="rota-post-header">
-		<span class="rota-post-tag">Curated Itinerary • Central Europe</span>
-		<h1>A Mini Winter Backpacking Adventure: Budapest, Bratislava, Vienna & Prague</h1>
-		<div class="rota-post-meta">Duration: 7 to 10 Days • Best Season: Late Autumn to Winter</div>
-	</div>
+    <!-- ARTIGO PRINCIPAL -->
+    <main class="rota-post-conteudo rota-animar-card">
+        <div class="rota-post-voltar">
+            <a href="./blog.html">← Back to Blog</a>
+        </div>
 
-	<div class="rota-post-hero-img">
-		<img src="./miniwinter.jpeg" alt="Winter Central Europe">
-	</div>
+        <div class="rota-post-header">
+            <span class="rota-tag-destaque">Itinerary & Backpacking Guide</span>
+            <h1>❄️ Mini Winter Backpacking Trip Through Central Europe</h1>
+            <p class="rota-post-subtitulo">Budapest → Bratislava → Vienna → Prague</p>
+            <div class="rota-meta-info">
+                <span>By Thais</span> • <span>Winter Journey</span> • <span>Central Europe</span>
+            </div>
+        </div>
 
-	<article class="rota-post-content">
-		<h2>Overview of the Journey</h2>
-		<p>Traveling across Central Europe in winter has a unique charm: fairy-tale architecture dusted in snow, historic café culture, and far fewer crowds than summer. This route connects four capital cities that are exceptionally close to each other, making train travel cheap, fast, and scenic.</p>
+        <div class="rota-post-banner">
+            <img src="./miniwinter.jpeg" onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1502602898657-3e91760cbb34?auto=format&fit=crop&w=1100&q=80';" alt="Central Europe Winter Trip" class="rota-banner-img">
+        </div>
 
-		<h2>The Suggested Route</h2>
-		<ul>
-			<li><strong>Stop 1: Budapest (Hungary)</strong> — Thermal baths in the cold, stunning views from Fisherman's Bastion, and affordable ruin bars.</li>
-			<li><strong>Stop 2: Bratislava (Slovakia)</strong> — Just a short train ride away; a cozy, walkable historical core that can be explored in 1 to 2 days.</li>
-			<li><strong>Stop 3: Vienna (Austria)</strong> — Grand palaces, classical music heritage, imperial architecture, and traditional coffee houses.</li>
-			<li><strong>Stop 4: Prague (Czech Republic)</strong> — The City of a Hundred Spires, historic Charles Bridge, and one of Europe's most picturesque castle complexes.</li>
-		</ul>
+        <div class="rota-caixa-resumo">
+            <p>A winter backpacking adventure through four beautiful European cities, traveling mostly by bus and exploring each destination on foot and by public transportation.</p>
+        </div>
 
-		<h2>Practical Budget Tips</h2>
-		<p>Book regional trains between cities in advance through local rail operators (like ÖBB or RegioJet) rather than open passes. Staying near metro stations allows easy access to historic centers without paying premium city-center hotel rates.</p>
-	</article>
+        <!-- QUICK TRIP ROUTE -->
+        <div class="rota-grid-fatos">
+            <div class="rota-fato-card">
+                <span class="rota-fato-icone">🇭🇺</span>
+                <strong>Budapest</strong>
+                <p>2 Days • Baths, Ruin Bars & Kürtőskalács</p>
+            </div>
+            <div class="rota-fato-card">
+                <span class="rota-fato-icone">🇸🇰</span>
+                <strong>Bratislava</strong>
+                <p>1 Day • Devín Castle via €5 FlixBus</p>
+            </div>
+            <div class="rota-fato-card">
+                <span class="rota-fato-icone">🇦🇹</span>
+                <strong>Vienna</strong>
+                <p>2 Days • Snowy Palaces & Austrian Opera</p>
+            </div>
+            <div class="rota-fato-card">
+                <span class="rota-fato-icone">🇨🇿</span>
+                <strong>Prague</strong>
+                <p>2 Days • Historic Magic & Sunset at Botel Vodník</p>
+            </div>
+        </div>
 
-	<a href="./blog.html" class="rota-voltar-btn">← Back to Blog</a>
+        <section class="rota-secao-destino">
+            <!-- BUDAPEST -->
+            <div class="rota-dia-card">
+                <h2>🇭🇺 Budapest, Hungary — 2 Days</h2>
+                <p>I started my adventure in Budapest, a beautiful city full of history and charm. The city is divided into two parts, Buda and Pest, separated by the famous Danube River.</p>
+                <p>Budapest has a large city center, and because I visited during winter, I relied quite a lot on public transportation to escape the cold. I bought a 72-hour public transport pass, which was very convenient.</p>
 
-	<footer class="rota-footer">
-		<p>© 2026 Rota da Vida. Crafted with care & calm thoughts.</p>
-	</footer>
+                <div class="rota-dica-alerta">
+                    <span class="rota-alerta-icon">💡</span>
+                    <div>
+                        <strong>Important Transit Tip:</strong>
+                        <p>Always validate your ticket before using public transportation. Otherwise, you can get fined — as I learned the hard way in Prague! 😅</p>
+                    </div>
+                </div>
+
+                <h3>📍 Things to do</h3>
+                <p>I explored a lot of Budapest on foot and visited some of the city's main attractions:</p>
+                <ul class="rota-lista-destaques">
+                    <li>Hungarian Parliament Building</li>
+                    <li>Buda Castle</li>
+                    <li>Great Market Hall</li>
+                    <li>Margaret Island</li>
+                    <li>Városliget (City Park)</li>
+                    <li>Outdoor thermal baths</li>
+                    <li>Ice skating</li>
+                    <li>Szimpla Kert</li>
+                </ul>
+
+                <p>I also tried some traditional Hungarian food. I had <em>kürtőskalács</em>, a delicious chimney cake with chocolate inside, and tasted the traditional goulash.</p>
+                <p>At night, I visited <strong>Szimpla Kert</strong>, one of Budapest's most famous ruin bars. The atmosphere was completely different from anything I had experienced before!</p>
+                <p><em>I spent two days in Budapest, but honestly, I would have loved to stay for one more.</em></p>
+            </div>
+
+            <!-- BRATISLAVA -->
+            <div class="rota-dia-card">
+                <h2>🇸🇰 Bratislava, Slovakia — 1 Day</h2>
+                <p>From Budapest, I took a FlixBus to Bratislava. The ticket cost around €5, and the journey took approximately 2.5 hours.</p>
+                <p>I only spent the day in Bratislava and didn't stay overnight. For me, that was enough to explore the main sights.</p>
+                <p>I walked around the historic city center and then headed to <strong>Devín Castle</strong>, a beautiful historic site with stunning views of the surrounding area.</p>
+                <p>By the end of the afternoon, I was already on my way to Austria.</p>
+
+                <div class="rota-destaques-dia">
+                    <strong>Travel tip:</strong> Bratislava works really well as a day trip when traveling between Budapest and Vienna.
+                </div>
+            </div>
+
+            <!-- VIENNA -->
+            <div class="rota-dia-card">
+                <h2>🇦🇹 Vienna, Austria — 2 Days</h2>
+                <p>From Bratislava, I took another FlixBus to Vienna, with a journey of around one hour.</p>
+                <p>I spent two days exploring Vienna and, despite the intense cold and snow, managed to see quite a lot of the city. The snow actually made everything feel even more magical! ❄️</p>
+
+                <h3>📍 Things to do</h3>
+                <ul class="rota-lista-destaques">
+                    <li>Schönbrunn Palace</li>
+                    <li>St. Stephen's Cathedral</li>
+                    <li>Historic city center</li>
+                    <li>Traditional Austrian opera</li>
+                </ul>
+
+                <p>One of the highlights of my time in Vienna was attending a traditional opera. It was one of the most memorable experiences of the entire trip, and I would definitely recommend it — even if classical music isn't usually your thing.</p>
+                <p>You can explore many parts of Vienna on foot, but because the temperatures were extremely low, I ended up using public transportation quite often.</p>
+            </div>
+
+            <!-- PRAGUE -->
+            <div class="rota-dia-card">
+                <h2>🇨🇿 Prague, Czech Republic — 2 Days</h2>
+                <p>From Vienna, I continued to Prague. The journey took around four hours, and I paid approximately €8.</p>
+                <p>Of all the destinations on this backpacking trip, Prague felt like the most affordable, at least from my perspective.</p>
+                <p>I stayed at a really cool hostel with a bar in the basement and live music, which made the experience even more fun.</p>
+
+                <h3>📍 Things to do</h3>
+                <p>Prague is simply charming! The Old Town Square is one of the city's highlights and is home to the famous Astronomical Clock, which attracts crowds throughout the day.</p>
+                <p>If you love architecture and beautiful historic buildings, Prague is a dream. I visited:</p>
+                <ul class="rota-lista-destaques">
+                    <li>Old Town Square</li>
+                    <li>Astronomical Clock</li>
+                    <li>Dancing House</li>
+                    <li>St. Nicholas Church</li>
+                    <li>John Lennon Wall</li>
+                    <li>Charles Bridge</li>
+                    <li>Prague Castle</li>
+                    <li>Botel Vodník</li>
+                </ul>
+
+                <p>One of my favorite moments was watching the sunset from <strong>Botel Vodník</strong>. It was one of those simple travel moments that stays with you forever. ✨</p>
+
+                <!-- FINE ALERT -->
+                <div class="rota-dica-alerta rota-alerta-erro">
+                    <span class="rota-alerta-icon">⚠️</span>
+                    <div>
+                        <strong>Important transportation tip (The €45 Lesson):</strong>
+                        <p>Even though I had purchased a 3-day public transport ticket, I received a €45 fine because I didn't know I had to validate it before using it. So, once again: <strong>Always validate your public transport ticket! 😅</strong></p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ROUTE TABLE -->
+            <h2>🎒 My Central Europe Route</h2>
+            <div class="rota-tabela-wrapper">
+                <table class="rota-tabela-custos">
+                    <thead>
+                        <tr>
+                            <th>Destination</th>
+                            <th>Time</th>
+                            <th>Transportation</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>🇭🇺 Budapest</td>
+                            <td>2 days</td>
+                            <td>—</td>
+                        </tr>
+                        <tr>
+                            <td>🇸🇰 Bratislava</td>
+                            <td>1 day</td>
+                            <td>FlixBus (~€5)</td>
+                        </tr>
+                        <tr>
+                            <td>🇦🇹 Vienna</td>
+                            <td>2 days</td>
+                            <td>FlixBus (~€5)</td>
+                        </tr>
+                        <tr>
+                            <td>🇨🇿 Prague</td>
+                            <td>2 days</td>
+                            <td>Bus (~€8)</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <!-- CLOSING -->
+            <div class="rota-box-reflexao">
+                <h2>✨ Total: 7 Days of Winter Memories</h2>
+                <p>This was a short but unforgettable winter backpacking adventure through Central Europe. Traveling between these four cities by bus made the route relatively easy to organize, and each destination had a completely different atmosphere.</p>
+                <p style="margin-bottom:0; font-style: italic; color: #6b8271;">If I were to do it again, I would probably add a few extra days to Budapest and Vienna — especially because traveling in winter means that the cold can slow you down a little!</p>
+            </div>
+        </section>
+
+        <div class="rota-rodape-artigo">
+            <a href="./blog.html" class="rota-btn rota-btn-primario">← Back to Blog</a>
+        </div>
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="rota-footer">
+        <p>© 2026 Rota da Vida. Crafted with care & calm thoughts.</p>
+    </footer>
 </div>
 
 </body>
